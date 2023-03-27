@@ -1,7 +1,7 @@
 <p>
     <mat-toolbar color="primary">
         <span class="leftMenu">
-            <span *ngIf="user" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  routerLink="/" class="login pointer">მთავარი</span>
+            <span routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  routerLink="/" class="login pointer">მთავარი</span>
         </span>
         <span class="rightMenu">
             <span *ngIf="user" routerLinkActive="active" routerLink="/results" class="login pointer">შედეგები</span>
@@ -9,6 +9,7 @@
             <span *ngIf="!user"  routerLinkActive="active" routerLink="/registration" class="register pointer">რეგისტრაცია</span>
             <span *ngIf="!user"  routerLinkActive="active" routerLink="/login" class="login pointer">შესვლა</span>
             <!-- <span *ngIf="user" routerLink="/addactcodes" class="logout pointer">აქტივაციის კოდების დამატება</span> -->
+            <span *ngIf="user" routerLink="/personalPage" class="logout pointer">პირადი გვერდი</span>
             <span *ngIf="user" (click)="signOut()" class="logout pointer">გამოსვლა</span>
             <span (click)="signOut()" *ngIf="user">
                 <button mat-icon-button class="pointer">

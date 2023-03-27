@@ -165,6 +165,7 @@ export class SwimmerRegisterComponent implements OnDestroy, OnInit {
       cards: this._resultsService.cards,
       compInfo : {poolSize: this.poolSize ,...compInfo}
     }
+    console.log(info)
     this._resultsService.registerSwimmers(info)
       .subscribe(
         res => {
@@ -173,6 +174,7 @@ export class SwimmerRegisterComponent implements OnDestroy, OnInit {
         },
         err => {
           console.log(err)
+          alert('მოხდა შეცდომა, გთხოვთ გადაამოწმოთ წვდომა ინტერნეტთან და სცადოთ ხელახლა!')
         }
       )
     } else {
@@ -197,6 +199,7 @@ export class SwimmerRegisterComponent implements OnDestroy, OnInit {
             date: this.compDate
           }
           this.info = { ...FormValue, poolSize: this.poolSize , compInfo: compInfo }
+          this._resultsService.openSidenav(false)
           this._resultsService.getSwimmerCardInfo(this.info)
             .subscribe(
               async res => {

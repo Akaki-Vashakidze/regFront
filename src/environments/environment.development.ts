@@ -1,5 +1,5 @@
 
-let port = 'https://regback-production.up.railway.app/'
+let port = 'http://localhost:3500/'
 
 export const environment = {
     registrationURL: port + 'registration/register',

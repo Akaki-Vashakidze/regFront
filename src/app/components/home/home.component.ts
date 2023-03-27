@@ -10,6 +10,9 @@ export class HomeComponent implements OnInit {
   userIn:boolean;
 ngOnInit(): void {
   this.userIn = !!localStorage.getItem('user')
-  this.userName = localStorage.getItem('user').split('/')[0]
+  if(this.userName) {
+     this.userName = localStorage.getItem('user').split('/')[0]
+  }
+ 
 }
 }

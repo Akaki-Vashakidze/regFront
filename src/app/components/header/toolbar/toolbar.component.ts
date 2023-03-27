@@ -26,7 +26,7 @@ constructor(private _authService:AuthService,private _resultsService:ResultsServ
   }
 
   openSidenav() {
-    this._resultsService.openSidenav()
+    this._resultsService.openSidenav(true)
   }
 
   ngOnDestroy(): void {

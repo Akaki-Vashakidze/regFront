@@ -59,7 +59,30 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <app-error *ngIf="slowInternet"></app-error>
-        <button mat-raised-button (click)="sidenav.toggle()">{{opened?'X':'დამატება'}}</button>
+
+        <button mat-raised-button class="openClose"  *ngIf="!opened" (click)="sidenav.open()">
+            დ <br><br>
+            ა <br><br>
+            მ <br><br>
+            ა <br><br>
+            ტ <br><br>
+            ე <br><br>
+            ბ <br><br>
+            ა <br><br>
+        </button>
+
+        <button mat-raised-button class="openClose" *ngIf="opened" (click)="sidenav.close()">
+            დ <br><br>
+            ა <br><br>
+            ხ <br><br>
+            უ <br><br>
+            რ <br><br>
+            ვ <br><br>
+            ა <br><br>
+        </button>
+
+        <!-- <button mat-raised-button class="add" (click)="sidenav.toggle()">{{opened?'X':'დამატება'}}</button> -->
+
         <div class="cards">
             <app-swimmer-card *ngFor="let card of Cards" [cardId]="card._id" [clubNames]="clubNames" [bestResultCompName]="card.bestResultCompName" [bestResultCompDate]="card.bestResultCompDate" [compName]="compName" [compDate]="compDate" [style]="card.style" [distance]="card.distance" [gender]="card.gender" [result]="card.result" [age]="card.age" [club]="card.club" [lastname]="card.lastname" [name]="card.name"
                ></app-swimmer-card>
