@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; box-sizing: border-box; }
+body { margin: 0; box-sizing: border-box; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.pointer {
+    cursor: pointer;
+}
+
+.active {
+    color: rgb(255, 0, 0);
+}
+
+.hide {
+    display: none;
+}
+
+a{
+    cursor: pointer;
+    color: rgb(12, 12, 212);
+}
