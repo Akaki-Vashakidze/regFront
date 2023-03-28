@@ -15,13 +15,14 @@ export class MeetResultsComponent implements OnInit{
   dataSource: any;
   columns: string[] = ['event', 'gender', 'results'];
   loading: boolean = false;
-
+  innerWidth: any;
   @ViewChild(MatSort) sort: MatSort | any;
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
 constructor(private route:ActivatedRoute,private _router:Router, private _authService:AuthService ,private _resultsService:ResultsService){}
 meetID:string;
 name:string;
 ngOnInit(): void {
+  this.innerWidth = window.innerWidth;
   this.loading = true;
  this.meetID = this.route.snapshot.params['meetID']
  this._resultsService.getMeetResults(this.meetID)
@@ -40,6 +41,18 @@ ngOnInit(): void {
    }
  )
 }
+
+
+applyFilter(filterValue: string) {
+  filterValue = filterValue.trim(); // Remove whitespace
+  filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+  this.dataSource.filter = filterValue;
+}
+
+onResize() {
+  this.innerWidth = window.innerWidth;
+}
+
 seeEvents(event:any,gender:any){
 this._router.navigate(['meetEventResults',event,this.meetID,gender])
 }
