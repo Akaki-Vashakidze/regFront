@@ -60,7 +60,7 @@
     <mat-sidenav-content>
         <app-error *ngIf="slowInternet"></app-error>
 
-        <button mat-raised-button class="openClose"  *ngIf="!opened" (click)="sidenav.open()">
+        <button mat-raised-button color="primary" class="openClose"  *ngIf="!opened" (click)="sidenav.open()">
             დ <br><br>
             ა <br><br>
             მ <br><br>
@@ -71,7 +71,7 @@
             ა <br><br>
         </button>
 
-        <button mat-raised-button class="openClose" *ngIf="opened" (click)="sidenav.close()">
+        <button mat-raised-button color="primary" class="openClose" *ngIf="opened" (click)="sidenav.close()">
             დ <br><br>
             ა <br><br>
             ხ <br><br>
