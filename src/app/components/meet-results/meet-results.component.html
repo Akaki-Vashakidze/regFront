@@ -35,6 +35,7 @@
 
 
 <div class="filter" [ngClass]="loading? 'hide':''" >
+  <h1>{{'ივენთები'}}</h1>
   <mat-form-field>
     <input  matInput (keyup)="applyFilter($event.target.value)" placeholder="გაფილტვრა">
   </mat-form-field>
@@ -46,19 +47,19 @@
     <!-- ID Column -->
     <ng-container matColumnDef="event">
       <mat-header-cell class="header" *matHeaderCellDef mat-sort-header> ივენთი </mat-header-cell>
-      <mat-cell class="cell" *matCellDef="let row" > {{row.split(' ')[0] + ' ' + row.split(' ')[1]}}</mat-cell>
+      <mat-cell class="cell" *matCellDef="let row" (click)="seeEvents(row.split(' ')[0] + ' ' + row.split(' ')[1],row.split(' ')[2])" > {{row.split(' ')[0] + ' ' + row.split(' ')[1]}}</mat-cell>
     </ng-container>
 
     <!-- Progress Column -->
     <ng-container matColumnDef="gender">
       <mat-header-cell class="header" *matHeaderCellDef mat-sort-header> სქესი </mat-header-cell>
-      <mat-cell class="cell" *matCellDef="let row" > {{row.split(' ')[2]}} </mat-cell>
+      <mat-cell class="cell" *matCellDef="let row" (click)="seeEvents(row.split(' ')[0] + ' ' + row.split(' ')[1],row.split(' ')[2])"  > {{row.split(' ')[2]}} </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="results">
-      <mat-header-cell class="header" *matHeaderCellDef mat-sort-header> შედეგები </mat-header-cell>
-      <mat-cell class="cell" *matCellDef="let row"><a (click)="seeEvents(row.split(' ')[0] + ' ' + row.split(' ')[1],row.split(' ')[2])" >შედეგები</a></mat-cell>
+      <mat-header-cell class="header" *matHeaderCellDef mat-sort-header> </mat-header-cell>
+      <mat-cell class="cell link" *matCellDef="let row"><a (click)="seeEvents(row.split(' ')[0] + ' ' + row.split(' ')[1],row.split(' ')[2])" >შედეგების ნახვა</a></mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="columns"></mat-header-row>

@@ -39,6 +39,18 @@ text-align: center;
     width: 200px;
     padding: 10px;
    }
+
+   .cell {
+    cursor: pointer;
+   }
+
+   .link {
+    cursor: pointer;
+  }
+
+  .link:hover {
+    background-color: rgb(155, 167, 227);
+  }
   
   @media screen and (max-width: 650px) {
     .table1 {
@@ -46,6 +58,7 @@ text-align: center;
       vertical-align: middle;
     }
   
+
     .table1 caption {
       font-size: 1em;
     }

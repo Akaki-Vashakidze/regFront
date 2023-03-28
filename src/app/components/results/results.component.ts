@@ -62,7 +62,7 @@ export class ResultsComponent implements OnInit{
 
   onResize() {
     this.innerWidth = window.innerWidth;
-}
+  }
 
   seeResults(item:any){
     this._router.navigate(['/meetResults',item._id])

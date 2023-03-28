@@ -16,6 +16,24 @@ text-align: center;
     margin: auto;
   }
 
+  .cell {
+    cursor: pointer;
+   }
+
+   .link {
+    cursor: pointer;
+  }
+
+  .link:hover {
+    background-color: rgb(155, 167, 227);
+  }
+  
+
+  h1 {
+    margin: auto;
+    width: 100px;
+    padding: 10px;
+    }
 
   body {
     font-family: 'Covered By Your Grace', cursive;

@@ -52,25 +52,25 @@
     <!-- ID Column -->
     <ng-container matColumnDef="name">
       <mat-header-cell class="header" *matHeaderCellDef mat-sort-header> სახელი </mat-header-cell>
-      <mat-cell class="cell" *matCellDef="let row" > {{row.meetName}} </mat-cell>
+      <mat-cell class="cell" *matCellDef="let row" (click)="seeResults(row)"> {{row.meetName}} </mat-cell>
     </ng-container>
 
     <!-- Progress Column -->
     <ng-container matColumnDef="date">
-      <mat-header-cell class="header" *matHeaderCellDef mat-sort-header> აუზის სიგრძე </mat-header-cell>
-      <mat-cell class="cell" *matCellDef="let row" > {{innerWidth < 650 ? 'აუზის სიგრძე - ' + row.date:row.date}}  </mat-cell>
+      <mat-header-cell class="header" *matHeaderCellDef mat-sort-header>თარიღი</mat-header-cell>
+      <mat-cell class="cell" *matCellDef="let row" (click)="seeResults(row)"> {{innerWidth < 650 ? 'თარიღი - ' + row.date:row.date}}  </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="course">
-      <mat-header-cell class="header" *matHeaderCellDef mat-sort-header> თარიღი </mat-header-cell>
-      <mat-cell class="cell" *matCellDef="let row"> {{innerWidth < 650 ? 'თარიღი - ' + row.course:row.course}} </mat-cell>
+      <mat-header-cell class="header" *matHeaderCellDef mat-sort-header>აუზის სიგრძე</mat-header-cell>
+      <mat-cell class="cell" *matCellDef="let row" (click)="seeResults(row)"> {{innerWidth < 650 ? 'აუზის სიგრძე - ' + row.course:row.course}} </mat-cell>
     </ng-container>
 
     <!-- Color Column -->
     <ng-container matColumnDef="results">
-      <mat-header-cell class="header" *matHeaderCellDef mat-sort-header> რეგისტრაციის ბოლო ვადა </mat-header-cell>
-      <mat-cell class="cell" *matCellDef="let row"><a (click)="seeResults(row)">შედეგები</a></mat-cell>
+      <mat-header-cell class="header" *matHeaderCellDef mat-sort-header> </mat-header-cell>
+      <mat-cell class="cell link" *matCellDef="let row"><a (click)="seeResults(row)">ივენთების ნახვა</a></mat-cell>
     </ng-container>
 
      
