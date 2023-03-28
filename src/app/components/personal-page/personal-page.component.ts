@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 
 @Component({
   selector: 'app-personal-page',
@@ -11,6 +13,9 @@ userInfo:any;
 personalInfoForm:FormGroup
 edit : boolean = false;
 info = localStorage.getItem('user').split('/')
+
+constructor(private _dialog:MatDialog){}
+
 ngOnInit(): void {
 
   this.userInfo = {
@@ -20,7 +25,6 @@ ngOnInit(): void {
     mobile:this.info[3],
     userID:this.info[4]
   }
-  console.log(this.userInfo)
 
   this.personalInfoForm = new FormGroup({
     'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -44,7 +48,7 @@ editMode(){
 
 onSubmit(){
   if (this.personalInfoForm.status == 'INVALID') {
-    alert('გთხოვთ შეავსოთ ყველა საჭირო გრაფა')
+    this._dialog.open(AlertDialogComponent,{data:{content:'გთხოვთ შეავსოთ ყველა საჭირო გრაფა'}})
   } else {
     console.log(this.personalInfoForm.value)
     alert('ეს ფუნქცია მალე დაემატება')

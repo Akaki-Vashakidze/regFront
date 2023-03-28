@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ResultsService } from 'src/app/services/results.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
+import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 
 @Component({
   selector: 'app-competitions-list',
@@ -94,7 +95,6 @@ export class CompetitionsListComponent implements OnInit {
       res => {
         if (res.doubleReg == true) {
          let dialogRef = this._dialog.open(DialogComponent)
-
           dialogRef.afterClosed().subscribe(result => {
            if(result == 'true') {
             this._resultsService.registeredCards.next(res.foundMatch)
@@ -121,13 +121,13 @@ export class CompetitionsListComponent implements OnInit {
               if (compDay >= this.day) {
                 this._router.navigate(['/swimmerRegistraton', comp.name, comp.startDate, comp.poolSize, comp._id])
               } else {
-                alert('შეჯიბრზე რეგისტრაციის ვადა ამოიწურა')
+                this._dialog.open(AlertDialogComponent,{data:{content:'შეჯიბრზე რეგისტრაციის ვადა ამოიწურა'}})
               }
             } else {
-              alert('შეჯიბრზე რეგისტრაციის ვადა ამოიწურა')
+              this._dialog.open(AlertDialogComponent,{data:{content:'შეჯიბრზე რეგისტრაციის ვადა ამოიწურა'}})
             }
           } else {
-            alert('შეჯიბრზე რეგისტრაციის ვადა ამოიწურა')
+            this._dialog.open(AlertDialogComponent,{data:{content:'შეჯიბრზე რეგისტრაციის ვადა ამოიწურა'}})
           }
         }
       },

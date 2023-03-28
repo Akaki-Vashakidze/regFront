@@ -71,7 +71,7 @@
             ა <br><br>
         </button>
 
-        <button mat-raised-button color="primary" class="openClose" *ngIf="opened" (click)="sidenav.close()">
+        <!-- <button mat-raised-button color="primary" class="openClose" *ngIf="opened" (click)="sidenav.close()">
             დ <br><br>
             ა <br><br>
             ხ <br><br>
@@ -79,9 +79,9 @@
             რ <br><br>
             ვ <br><br>
             ა <br><br>
-        </button>
+        </button> -->
 
-        <!-- <button mat-raised-button class="add" (click)="sidenav.toggle()">{{opened?'X':'დამატება'}}</button> -->
+        <button color="primary" *ngIf="opened" mat-raised-button class="add" (click)="sidenav.close()">X</button>
 
         <div class="cards">
             <app-swimmer-card *ngFor="let card of Cards" [cardId]="card._id" [clubNames]="clubNames" [bestResultCompName]="card.bestResultCompName" [bestResultCompDate]="card.bestResultCompDate" [compName]="compName" [compDate]="compDate" [style]="card.style" [distance]="card.distance" [gender]="card.gender" [result]="card.result" [age]="card.age" [club]="card.club" [lastname]="card.lastname" [name]="card.name"
