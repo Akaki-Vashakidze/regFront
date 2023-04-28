@@ -26,6 +26,7 @@ import { PersonalPageComponent } from './components/personal-page/personal-page.
 import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
